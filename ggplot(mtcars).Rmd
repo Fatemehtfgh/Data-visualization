@@ -1,0 +1,42 @@
+---
+title: "my first plot"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+str(mtcars)
+```
+```{r}
+View(mtcars)
+```
+
+```{r}
+mtcars %>%
+  ggplot(aes(x = wt,
+             y = mpg,
+             color = factor(cyl))) +
+geom_point(size=3) +
+theme(text = element_text(size=28)) +
+labs(x = "Car mass (x 1000 pounds)",
+     y = "Fuel consumption (mpg)",
+     color = "Number of\nCylinders",
+     title = "Car road test results",
+     caption = "From Motor Trend magazine")
+
+```
+
+```{r}
+mtcars %>%
+  ggplot(aes(x = wt,
+             y = mpg,
+             color = (cyl))) +
+geom_point()
+```
+```{r}
+
+```
+
